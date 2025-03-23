@@ -12,6 +12,8 @@ import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 
 @Service
@@ -95,5 +97,14 @@ public class TaskService {
         }
         taskRepository.deleteById(id);
         return "Task with ID " + id + " deleted successfully.";
+    }
+
+    //Get grouped tasks by completion status to retrieve tasks grouped into completed and pending categories
+    public Map<Boolean, List<Task>> getGroupedTasksByCompletionStatus() {
+
+        List<Task> tasks = taskRepository.findAll();
+
+        return tasks.stream()
+                .collect(Collectors.groupingBy(Task::getCompleted));
     }
 }

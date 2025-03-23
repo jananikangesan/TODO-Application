@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/tasks")
@@ -77,5 +78,11 @@ public class TaskController {
     public ResponseEntity<String> deleteTask(@PathVariable Long id) {
 
         return ResponseEntity.ok(taskService.deleteTask(id));
+    }
+
+    //Get grouped tasks by completion status to retrieve tasks grouped into completed and pending categories
+    @GetMapping("/grouped")
+    public Map<Boolean, List<Task>> getGroupedTasks() {
+        return taskService.getGroupedTasksByCompletionStatus();
     }
 }
