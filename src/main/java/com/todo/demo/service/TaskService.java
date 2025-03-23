@@ -2,6 +2,9 @@ package com.todo.demo.service;
 
 
 import com.todo.demo.exception.TaskNotFoundException;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.client.RestTemplate;
@@ -71,6 +74,12 @@ public class TaskService {
             System.err.println("Error retrieving tasks from database: " + e.getMessage());
             return Collections.emptyList();
         }
+    }
+
+    // Implement pagination for fetching stored tasks.
+    public Page<Task> getAllTasks(int page, int size) {
+        Pageable pageable = PageRequest.of(page, size);
+        return taskRepository.findAll(pageable);
     }
 
     //Get task by ID to retrieve task details from the database.
