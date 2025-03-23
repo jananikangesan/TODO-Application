@@ -87,4 +87,13 @@ public class TaskService {
             return taskRepository.save(task);
         }).orElseThrow(() -> new TaskNotFoundException(id));
     }
+
+    //Delete a task from the database using an ID.
+    public String deleteTask(Long id) {
+        if (!taskRepository.existsById(id)) {
+            throw new TaskNotFoundException(id);
+        }
+        taskRepository.deleteById(id);
+        return "Task with ID " + id + " deleted successfully.";
+    }
 }

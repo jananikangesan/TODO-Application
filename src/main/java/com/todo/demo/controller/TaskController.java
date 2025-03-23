@@ -71,4 +71,11 @@ public class TaskController {
         Task updated = taskService.updateTask(id, updatedTask);
         return ResponseEntity.ok(updated);
     }
+
+    //Delete a task from the database using an ID.
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteTask(@PathVariable Long id) {
+
+        return ResponseEntity.ok(taskService.deleteTask(id));
+    }
 }
