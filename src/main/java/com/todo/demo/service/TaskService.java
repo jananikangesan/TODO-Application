@@ -1,6 +1,7 @@
 package com.todo.demo.service;
 
 
+import com.todo.demo.exception.TaskNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.client.RestTemplate;
@@ -23,6 +24,7 @@ public class TaskService {
 
     private final String API_URL = "https://jsonplaceholder.typicode.com/todos";
 
+    //fetch task from external API
     public List<Task> fetchTasksFromExternalAPI() {
         try {
             Task[] tasks = restTemplate.getForObject(API_URL, Task[].class);
@@ -36,6 +38,7 @@ public class TaskService {
         }
     }
 
+    //fetch task from external API and store it into database
     public String fetchAndStoreTasksFromExternalAPI() {
 
         try {
@@ -57,6 +60,7 @@ public class TaskService {
         }
     }
 
+    //Get all stored tasks from database
     public List<Task> getAll() {
         try {
             List<Task> tasks = taskRepository.findAll();
@@ -65,5 +69,11 @@ public class TaskService {
             System.err.println("Error retrieving tasks from database: " + e.getMessage());
             return Collections.emptyList();
         }
+    }
+
+    //Get task by ID to retrieve task details from the database.
+    public Task getTaskById(Long id) {
+        return taskRepository.findById(id)
+                .orElseThrow(() -> new TaskNotFoundException(id));
     }
 }

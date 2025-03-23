@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,6 +19,7 @@ public class TaskController {
     @Autowired
     private TaskService taskService;
 
+    //fetch task from external API
     @GetMapping("/all")
     public ResponseEntity<List<Task>> getTasksFromAPI() {
         try {
@@ -31,6 +33,7 @@ public class TaskController {
         }
     }
 
+    //fetch task from external API and store it into database
     @GetMapping("/fetch-and-store")
     public ResponseEntity<String> fetchAndStoreTasks() {
         try {
@@ -44,6 +47,7 @@ public class TaskController {
         }
     }
 
+    //Get all stored tasks from database
     @GetMapping("/")
     public ResponseEntity<List<Task>> getAllTasks(){
         try {
@@ -55,5 +59,12 @@ public class TaskController {
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
         }
+    }
+
+    //Get task by ID to retrieve task details from the database.
+    @GetMapping("/{id}")
+    public ResponseEntity<Task> getTaskById(@PathVariable Long id) {
+        Task task = taskService.getTaskById(id);
+        return ResponseEntity.ok(task);
     }
 }
