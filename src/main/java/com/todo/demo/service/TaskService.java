@@ -76,4 +76,15 @@ public class TaskService {
         return taskRepository.findById(id)
                 .orElseThrow(() -> new TaskNotFoundException(id));
     }
+
+    //Update task details using an ID.
+    public Task updateTask(Long id, Task updatedTask) {
+        return taskRepository.findById(id).map(task -> {
+            task.setTitle(updatedTask.getTitle());
+            task.setCompleted(updatedTask.getCompleted());
+            task.setUserId(updatedTask.getUserId());
+            task.setUpdatedAt(LocalDateTime.now());
+            return taskRepository.save(task);
+        }).orElseThrow(() -> new TaskNotFoundException(id));
+    }
 }
