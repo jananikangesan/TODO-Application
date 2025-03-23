@@ -18,7 +18,7 @@ Ensure you have the following installed:
 - Apache Maven 3.9.9
 - MySQL
   
-  ### **Steps to Run the Application**
+### **Steps to Run the Application**
 1. **Clone the repository**
    * git clone https://github.com/jananikangesan/TODO-Application.git
    * cd TODO-Application
@@ -29,6 +29,10 @@ Ensure you have the following installed:
 5. **Access the API** :
    * API runs on http://localhost:8085
    * Swagger UI: http://localhost:8085/swagger-ui/index.html
+
+### Access Swagger UI for API documentation:
+
+* http://localhost:8085/swagger-ui/index.html
 
 ## Database Schema
 
