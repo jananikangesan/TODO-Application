@@ -41,14 +41,15 @@ The application uses a relational database (**MySQL**) to store task-related inf
 ### **1. Task Table**
 The task table stores all tasks with their details.
 
-| Column     | Type         | Constraints         | Description                        |
-|------------|-------------|---------------------|------------------------------------|
-| id       | BIGINT (PK) | AUTO_INCREMENT      | Unique identifier for each task   |
-| userId   | BIGINT      | NOT NULL            | The ID of the user who owns the task |
-| title    | VARCHAR(255)| NOT NULL            | Title or name of the task         |
-| completed| BOOLEAN     | DEFAULT FALSE       | Status of task completion         |
-| createdAt| TIMESTAMP   | DEFAULT CURRENT_TIMESTAMP | Task creation time |
-| updatedAt| TIMESTAMP   | ON UPDATE CURRENT_TIMESTAMP | Last update time |
+| Column      | Type          | Constraints                   | Description                         |
+|------------|--------------|------------------------------|-------------------------------------|
+| `id`       | BIGINT (PK)  | NOT NULL                     | Unique identifier for each task    |
+| `user_id`  | BIGINT       | DEFAULT NULL                 | The ID of the user who owns the task |
+| `title`    | VARCHAR(255) | DEFAULT NULL                 | Title or name of the task          |
+| `completed`| BOOLEAN      | DEFAULT NULL                 | Status of task completion          |
+| `created_at`| DATETIME(6) | DEFAULT NULL                 | Task creation time                 |
+| `updated_at`| DATETIME(6) | DEFAULT NULL                 | Last update time                   |
+
 
 
 ##  Sample API Requests and Responses
