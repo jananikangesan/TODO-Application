@@ -1,0 +1,224 @@
+{
+	"info": {
+		"_postman_id": "9bd1a6b0-f786-45ce-b4dd-e587ce993cfd",
+		"name": "TODO Assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "34436633"
+	},
+	"item": [
+		{
+			"name": "localhost:8085/tasks/all",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NDI3NzY2NTcsImV4cCI6MTc0Mjc4MDI1N30.DEDEXfyiyaOjlDM1Y24Pol6WcmywjP_rKAppSZreTt8eeLZX9xIiZGCFpqvDvXaU"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8085/tasks/all"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8085/tasks/fetch-and-store",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NDI3NzY2NTcsImV4cCI6MTc0Mjc4MDI1N30.DEDEXfyiyaOjlDM1Y24Pol6WcmywjP_rKAppSZreTt8eeLZX9xIiZGCFpqvDvXaU"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8085/tasks/fetch-and-store"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8085/tasks/",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NDI3NzY2NTcsImV4cCI6MTc0Mjc4MDI1N30.DEDEXfyiyaOjlDM1Y24Pol6WcmywjP_rKAppSZreTt8eeLZX9xIiZGCFpqvDvXaU"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8085/tasks/"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8085/tasks/100",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NDI3NzY2NTcsImV4cCI6MTc0Mjc4MDI1N30.DEDEXfyiyaOjlDM1Y24Pol6WcmywjP_rKAppSZreTt8eeLZX9xIiZGCFpqvDvXaU"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8085/tasks/100"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8085/tasks/1",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NDI3NzY2NTcsImV4cCI6MTc0Mjc4MDI1N30.DEDEXfyiyaOjlDM1Y24Pol6WcmywjP_rKAppSZreTt8eeLZX9xIiZGCFpqvDvXaU"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"delectus aut autem\",\r\n    \"completed\": true,\r\n    \"userId\": 5\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8085/tasks/1"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8085/tasks/3",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NDI3NzY2NTcsImV4cCI6MTc0Mjc4MDI1N30.DEDEXfyiyaOjlDM1Y24Pol6WcmywjP_rKAppSZreTt8eeLZX9xIiZGCFpqvDvXaU"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": "localhost:8085/tasks/3",
+				"description": "Delete a task from the database using its ID"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8085/tasks/grouped",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NDI3NzY2NTcsImV4cCI6MTc0Mjc4MDI1N30.DEDEXfyiyaOjlDM1Y24Pol6WcmywjP_rKAppSZreTt8eeLZX9xIiZGCFpqvDvXaU"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8085/tasks/grouped"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8085/tasks/paginated?page=1&size=5",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NDI3NzY2NTcsImV4cCI6MTc0Mjc4MDI1N30.DEDEXfyiyaOjlDM1Y24Pol6WcmywjP_rKAppSZreTt8eeLZX9xIiZGCFpqvDvXaU"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/tasks/paginated?page=1&size=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"tasks",
+						"paginated"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "size",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8085/register",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"admin@gmail.com\",\r\n   \"username\":\"admin\",\r\n   \"password\":\"admin1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8085/register"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8085/register",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"kana@gmail.com\",\r\n   \"username\":\"kana\",\r\n   \"password\":\"kana1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8085/register"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8085/login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"admin@gmail.com\",\r\n   \"password\":\"admin1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8085/login"
+			},
+			"response": []
+		}
+	]
+}
